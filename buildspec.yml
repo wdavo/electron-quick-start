@@ -3,6 +3,7 @@ version: 0.2
 phases:
   install:
     commands:
+      apt-get install --no-install-recommends expect
       npm install -g electron-forge
   pre_build:
     commands:
@@ -12,7 +13,7 @@ phases:
     commands:
       - mkdir .build
       - cd .build
-      - echo "Y  N" | electron-forge import ../
+      - ../electron-import.sh
       - electron-forge package
       - electron-forge make
   post_build:
