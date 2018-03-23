@@ -12,9 +12,7 @@ phases:
     commands:
       - mkdir .build
       - cd .build
-      - electron-forge import ../
-      - y
-      - n
+      - echo "Y  N" | electron-forge import ../
       - electron-forge package
       - electron-forge make
   post_build:
