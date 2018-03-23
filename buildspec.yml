@@ -13,6 +13,8 @@ phases:
       - mkdir .build
       - cd .build
       - electron-forge import ../
+      - y
+      - n
       - electron-forge package
       - electron-forge make
   post_build:
