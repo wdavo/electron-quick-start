@@ -13,7 +13,7 @@ phases:
   build:
     commands:
       - chmod +x electron-import.sh
-      - electron-import.sh
+      - ./electron-import.sh
       - electron-forge package
       - electron-forge make
   post_build:
