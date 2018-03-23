@@ -6,19 +6,15 @@ phases:
       npm install -g electron-forge
   pre_build:
     commands:
-      - shopt -s extglob
-      - mkdir source
-      - mv -vt source ./!(source)
-      - mkdir deploy
-      - cd source
       - echo Installing source NPM dependencies...
       - npm install
   build:
     commands:
-      - mkdir build
-      - cd build
-      - electron-forge import .
-      - npm install
+      - mkdir .build
+      - cd .build
+      - electron-forge import ../
+      - electron-forge package
+      - electron-forge make
   post_build:
     commands:
       - echo Build completed on `date`
