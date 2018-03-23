@@ -3,7 +3,8 @@ version: 0.2
 phases:
   install:
     commands:
-      - apt-get install --no-install-recommends expect
+      - apt-get update -y
+      - apt-get install -y --no-install-recommends expect
       - npm install -g electron-forge
   pre_build:
     commands:
