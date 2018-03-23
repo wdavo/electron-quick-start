@@ -9,7 +9,6 @@ phases:
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
-      - npm install electron-prebuilt-compile --save-dev
       - npm install
   build:
     commands:
