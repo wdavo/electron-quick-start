@@ -1,18 +1,23 @@
-version: 0.1
+version: 0.2
 
 phases:
   install:
     commands:
-      npm install -g electron-forge
+      - apt-get update -y
+      - apt-get install -y --no-install-recommends expect
+      - npm install -g electron-forge
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
       - npm install
   build:
     commands:
-      - mkdir .build
-      - cd .build
-      - electron-forge import ../
+      - chmod +x electron-import.sh
+      - echo Electron import starting
+      - ./electron-import.sh
+      - echo Electron import finished
+      - ls
+      - cat package.json
       - electron-forge package
       - electron-forge make
   post_build:
@@ -20,4 +25,4 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - HelloWorld.js
+    - /out
