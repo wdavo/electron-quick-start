@@ -8,7 +8,7 @@ die(){
 export HISTIGNORE="expect*";
 
 expect -c "
-	spawn electron-forge import ../
+	spawn electron-forge import .
 	expect "continue"
 	send \"y\r\"
 	expect "babel"
