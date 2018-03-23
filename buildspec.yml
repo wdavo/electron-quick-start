@@ -1,0 +1,27 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      npm install -g electron-forge
+  pre_build:
+    commands:
+      - shopt -s extglob
+      - mkdir source
+      - mv -vt source ./!(source)
+      - mkdir deploy
+      - cd source
+      - echo Installing source NPM dependencies...
+      - npm install
+  build:
+    commands:
+      - mkdir build
+      - cd build
+      - electron-forge import .
+      - npm install
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - HelloWorld.js
