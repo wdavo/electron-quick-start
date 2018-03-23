@@ -12,10 +12,8 @@ phases:
       - npm install
   build:
     commands:
-      - mkdir .build
-      - cd .build
-      - chmod +x ../electron-import.sh
-      - ../electron-import.sh
+      - chmod +x electron-import.sh
+      - electron-import.sh
       - electron-forge package
       - electron-forge make
   post_build:
