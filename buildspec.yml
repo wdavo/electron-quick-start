@@ -5,6 +5,7 @@ phases:
     commands:
       - apt-get update -y
       - apt-get install -y --no-install-recommends expect
+      - npm install -g extract-zip
       - npm install -g electron-forge
   pre_build:
     commands:
@@ -25,4 +26,4 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - .
+    - ./*
