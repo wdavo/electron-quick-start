@@ -17,7 +17,6 @@ phases:
       - ./electron-import.sh
       - echo Electron import finished
       - ls
-      - cat main.js
       - cat package.json
       - electron-forge package
       - electron-forge make
