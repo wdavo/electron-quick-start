@@ -6,6 +6,23 @@
   "scripts": {
     "start": "electron ."
   },
+  "config": {
+    "forge": {
+      "make_targets": {
+        "win32": ["squirrel"],
+        "darwin": ["zip", "dmg"],
+        "linux": ["deb", "rpm", "flatpak", "snap"]
+      },
+      "electronPackagerConfig": {},
+      "electronRebuildConfig": {},
+      "electronWinstallerConfig": {},
+      "electronInstallerDMG": {},
+      "electronInstallerFlatpak": {},
+      "electronInstallerDebian": {},
+      "electronInstallerRedhat": {},
+      "electronInstallerSnap": {}
+    }
+  },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
     "Electron",
@@ -17,6 +34,7 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "~1.8.2"
+    "electron": "~1.8.2",
+    "electron-prebuilt-compile" : "1.8.4"
   }
 }
