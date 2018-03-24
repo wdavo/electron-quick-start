@@ -19,7 +19,7 @@ phases:
       - echo Electron import finished
       - ls
       - cat package.json
-      - electron-forge package
+      #- electron-forge package 
       - electron-forge make
   post_build:
     commands:
