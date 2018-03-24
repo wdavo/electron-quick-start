@@ -3,27 +3,17 @@ version: 0.2
 phases:
   install:
     commands:
-      - apt-get update -y
-      - apt-get install -y --no-install-recommends expect
-      - npm install -g extract-zip
-      - npm install -g electron-forge
   pre_build:
     commands:
       - echo Installing source NPM dependencies...
       - npm install
   build:
     commands:
-      - chmod +x electron-import.sh
-      - echo Electron import starting
-      - ./electron-import.sh
-      - echo Electron import finished
-      - ls
-      - cat package.json
-      #- electron-forge package 
-      - electron-forge make
+    - npm run package-win
+    - npm run create-installer-win
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - ./**/*
+    - ./release-builds
